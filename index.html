@@ -226,6 +226,10 @@
   .btn.solid:hover{color:var(--ink);filter:brightness(1.05);}
   .btn.ghost{border:1.5px solid rgba(244,240,230,.5);color:var(--cream);padding:16px 32px;}
   .btn.ghost:hover{color:var(--cream);border-color:var(--gold);}
+  .iglink{display:inline-flex;align-items:center;gap:10px;margin-top:26px;color:#B9CCCE;
+        font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.05em;}
+  .iglink svg{width:20px;height:20px;color:var(--gold);}
+  .iglink:hover{color:var(--gold);}
   .footer{border-top:1px solid rgba(238,191,79,.25);padding-top:30px;display:flex;justify-content:space-between;
         align-items:center;flex-wrap:wrap;gap:16px;}
   .footer .brand .mark{height:52px;}
@@ -259,8 +263,7 @@
     .statement{grid-template-columns:1fr;gap:20px;padding:72px 24px;}
     .statement .lede{font-size:30px;}
     .srow{grid-template-columns:1fr;}
-    .srow.reverse .copy{order:0;}
-    .srow.reverse .media{order:0;}
+    .srow.reverse .media{order:-1;}  /* image above copy when stacked */
     .srow .media{min-height:340px;}
     .srow .copy{padding:56px 24px;}
     .srow h3{font-size:32px;}
@@ -538,6 +541,10 @@
         <a href="tel:5550102400" class="btn solid">CALL (555) 010-2400</a>
         <a href="sms:5550102400" class="btn ghost">TEXT US</a>
       </div>
+      <a class="iglink" href="https://www.instagram.com/yourstagingteam" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg>
+        <span>Follow our work — @yourstagingteam</span>
+      </a>
     </div>
     <div class="footer">
       <a class="brand" href="#top" aria-label="Your Team home">
