@@ -48,7 +48,7 @@ rotation), resized for web, and re-encoded as progressive JPEG. Total ~3.7 MB.
 | File | Source | Used for |
 |------|--------|----------|
 | `logo-mark.png` | logo1.png | Header + footer mark (transparent) |
-| `logo-full.jpg` | fullrev3.jpg | Full lockup (reference, not placed) |
+| `logo-full.png` | Final 2-01.png | Full lockup, transparent (for light backgrounds; not placed on the dark site) |
 | `hero.jpg` | IMG_2071 | Hero background |
 | `service-staging.jpg` | IMG_1911 | Service 01 — Staging |
 | `service-cleaning.jpg` | IMG_4498 | Service 02 — Cleaning |
