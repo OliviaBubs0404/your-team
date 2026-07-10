@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Team Inc — Home Staging, Styling, Cleaning &amp; Junk Removal in the DMV</title>
+<meta name="description" content="Your Team Inc stages, styles, deep-cleans and clears out homes across Washington, D.C., Northern Virginia and the Maryland suburbs so they show their very best. Book one service or the whole crew.">
+<!-- STAGING ONLY: remove the next line at launch so search engines can index the real domain -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Team — Homes that show their best">
+<meta property="og:description" content="Staging, styling, cleaning &amp; junk removal across the DMV. One name, every trade.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Your Team",
+  "legalName": "Your Team Inc",
+  "alternateName": "Your Team Staging",
+  "slogan": "Teaming to make your dream home today",
+  "description": "Your Team Inc is a home staging, styling, cleaning and junk removal company serving the greater Washington, D.C. metro — Northern Virginia, the Maryland suburbs, west to Winchester and south to Manassas and Dumfries. Homeowners can book a single service or the whole crew; realtors partner with Your Team to prepare listings that sell faster and for higher offers.",
+  "image": "assets/hero.jpg",
+  "logo": "assets/logo-mark.png",
+  "sameAs": [
+    "https://www.instagram.com/yourstagingteam"
+  ],
+  "areaServed": [
+    { "@type": "Place", "name": "Washington, D.C." },
+    { "@type": "Place", "name": "Northern Virginia" },
+    { "@type": "Place", "name": "Maryland suburbs" },
+    { "@type": "Place", "name": "Winchester, VA" },
+    { "@type": "Place", "name": "Manassas, VA" },
+    { "@type": "Place", "name": "Dumfries, VA" }
+  ],
+  "knowsAbout": ["home staging", "interior styling", "decorating consultation", "move-out cleaning", "deep cleaning", "junk removal", "real estate listing preparation"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Staging & Styling", "description": "Furniture, light and styling arranged so a home looks its most inviting — for listings or a fresh look. Decorating consults available on their own." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cleaning", "description": "Move-out, move-in and refresh cleans. Deep, detailed cleaning that reads as care in every photograph and showing." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Junk Removal", "description": "Clutter hauled and handled so a space can breathe — often the fastest way to make a home feel larger and ready to show." } }
+    ]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4F0E6; --ink:#14343A; --deep:#0E2B29; --teal:#1B8090;
+    --gold:#EEBF4F; --muted:#4A5257; --line:#E2DDCF; --line2:#D8D2C2;
+    --serif:'Libre Caslon Display',serif;
+    --sans:'Instrument Sans',sans-serif;
+    --display:'Archivo',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:var(--teal);text-decoration:none;}
+  a:hover{color:var(--ink);}
+  h1,h2,h3,p{margin:0;}
+  img{display:block;max-width:100%;}
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  .wrap{width:100%;max-width:1600px;margin:0 auto;background:var(--cream);overflow:hidden;position:relative;}
+
+  /* ---------- image placeholder system ----------
+     Each .slot shows a branded gradient + hint label.
+     A real photo (assets/*.jpg) sits on top and covers it once loaded.
+     If the file is missing, img gets .missing and the placeholder shows. */
+  .slot{position:relative;width:100%;height:100%;overflow:hidden;
+        background:linear-gradient(135deg,#1c4a45 0%,var(--deep) 100%);}
+  .slot::after{content:"";position:absolute;inset:0;
+        background-image:radial-gradient(rgba(238,191,79,.10) 1px,transparent 1px);
+        background-size:22px 22px;opacity:.5;pointer-events:none;}
+  .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;
+        transition:opacity .4s ease;}
+  .slot img.missing{opacity:0;}
+  .slot .hint{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;}
+  .slot .hint svg{width:34px;height:34px;stroke:rgba(238,191,79,.7);fill:none;stroke-width:1.4;}
+  .slot .hint span{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.18em;
+        text-transform:uppercase;color:rgba(215,226,227,.7);max-width:220px;line-height:1.5;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;height:760px;overflow:hidden;background:var(--deep);}
+  .hero .bg{position:absolute;inset:0;}
+  .hero .scrim{position:absolute;inset:0;pointer-events:none;z-index:3;
+        background:linear-gradient(180deg,rgba(14,43,41,.72) 0%,rgba(14,43,41,.18) 34%,rgba(14,43,41,.35) 62%,rgba(14,43,41,.92) 100%);}
+  .topbar{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:32px 56px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{height:64px;width:auto;}
+  .brand .word{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.06em;color:var(--cream);}
+  .nav{display:flex;align-items:center;gap:34px;font-size:13px;letter-spacing:.06em;white-space:nowrap;}
+  .nav a{color:#EDE7D8;}
+  .nav a:hover{color:var(--gold);}
+  .nav .cta{color:var(--ink);background:var(--gold);font-family:var(--display);font-weight:700;
+        font-size:12px;letter-spacing:.12em;padding:12px 22px;border-radius:2px;}
+  .nav .cta:hover{color:var(--ink);filter:brightness(1.05);}
+  .navtoggle{display:none;background:none;border:0;padding:8px;cursor:pointer;z-index:6;}
+  .navtoggle span{display:block;width:26px;height:2px;background:var(--cream);margin:5px 0;transition:.25s;}
+
+  .vmeta{position:absolute;right:20px;top:50%;transform:translateY(-50%) rotate(90deg);
+        transform-origin:right center;white-space:nowrap;font-family:var(--display);font-weight:700;
+        font-size:11px;letter-spacing:.34em;color:rgba(244,240,230,.65);z-index:4;pointer-events:none;}
+  .headline{position:absolute;left:56px;right:56px;bottom:64px;z-index:4;pointer-events:none;}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+  .eyebrow .rule{width:44px;height:1px;background:var(--gold);}
+  .eyebrow .kicker{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.28em;color:var(--gold);}
+  .headline h1{font-family:var(--serif);font-weight:400;color:#F7F3E9;font-size:96px;line-height:.98;
+        letter-spacing:-.015em;max-width:1000px;}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--ink);color:var(--cream);overflow:hidden;padding:20px 0;
+        border-bottom:1px solid rgba(238,191,79,.35);}
+  .marquee .track{display:flex;align-items:center;gap:40px;font-family:var(--serif);font-size:30px;
+        white-space:nowrap;width:max-content;animation:scroll 26s linear infinite;}
+  .marquee .track span{padding-left:0;}
+  .marquee .star{color:var(--gold);}
+  .marquee .em{font-style:italic;color:var(--gold);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.marquee .track{animation:none;justify-content:center;width:100%;}}
+
+  /* ---------- statement ---------- */
+  .statement{padding:104px 56px;background:var(--cream);display:grid;grid-template-columns:220px 1fr;gap:48px;}
+  .label{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--teal);}
+  .statement .label{padding-top:12px;}
+  .statement .lede{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.24;
+        letter-spacing:-.01em;margin-bottom:20px;color:var(--ink);}
+  .statement .lede em{color:var(--teal);font-style:italic;}
+  .statement .sub{font-size:16px;line-height:1.6;color:var(--muted);max-width:640px;}
+
+  /* ---------- services ---------- */
+  .services{background:#fff;}
+  .srow{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;border-top:1px solid var(--line);}
+  .services .srow:last-child{border-bottom:1px solid var(--line);}
+  .srow .media{min-height:520px;position:relative;}
+  .srow .copy{padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .srow.reverse .copy{order:1;}
+  .srow.reverse .media{order:2;}
+  .srow .num{font-family:var(--serif);font-size:64px;color:var(--gold);line-height:1;margin-bottom:18px;}
+  .srow .cat{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.22em;color:var(--teal);margin-bottom:14px;}
+  .srow h3{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.05;margin-bottom:18px;}
+  .srow p{font-size:17px;line-height:1.7;color:var(--muted);max-width:420px;margin-bottom:24px;}
+  .txtlink{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--ink);
+        border-bottom:1px solid var(--gold);padding-bottom:4px;align-self:flex-start;}
+  .txtlink:hover{color:var(--teal);}
+
+  /* ---------- what is staging ---------- */
+  .staging{padding:104px 56px;background:var(--ink);color:var(--cream);}
+  .staging .inner{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;}
+  .staging .eyebrow .rule{width:36px;}
+  .staging .kicker{color:var(--gold);letter-spacing:.24em;}
+  .staging h2{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1.04;margin-bottom:22px;}
+  .staging p{font-size:18px;line-height:1.75;color:#D7E2E3;margin-bottom:28px;}
+  .staging p em{color:var(--gold);font-style:italic;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:22px;border-top:1px solid rgba(238,191,79,.3);padding-top:26px;}
+  .stats .big{font-family:var(--serif);font-size:34px;color:var(--gold);}
+  .stats .small{font-size:14px;color:#B9CCCE;margin-top:4px;}
+
+  /* before / after slider */
+  .ba{position:relative;width:100%;height:460px;border-radius:4px;overflow:hidden;user-select:none;
+        cursor:ew-resize;touch-action:none;box-shadow:0 24px 60px rgba(0,0,0,.35);}
+  .ba .layer{position:absolute;inset:0;pointer-events:none;}
+  .ba .layer .slot{background:linear-gradient(135deg,#1c4a45,#0E2B29);}
+  .ba .before{z-index:1;}                       /* empty room — base layer */
+  .ba .after{z-index:2;clip-path:inset(0 0 0 50%);}  /* staged — revealed on the right */
+  .ba .tag{position:absolute;top:18px;font-family:var(--display);font-weight:700;font-size:11px;
+        letter-spacing:.14em;padding:6px 12px;border-radius:2px;pointer-events:none;z-index:4;}
+  .ba .tag.before{left:18px;background:rgba(14,43,41,.85);color:var(--cream);}
+  .ba .tag.after{right:18px;background:var(--gold);color:var(--ink);}
+  .ba .divider{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--gold);
+        transform:translateX(-1px);pointer-events:none;z-index:4;}
+  .ba .knob{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;margin-left:-23px;margin-top:-23px;
+        background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;
+        color:var(--ink);font-family:var(--display);font-weight:900;font-size:15px;pointer-events:none;z-index:5;
+        box-shadow:0 6px 18px rgba(0,0,0,.4);}
+  .ba-hint{font-size:12px;color:#8FA9AB;margin-top:14px;text-align:center;font-family:var(--display);
+        font-weight:600;letter-spacing:.14em;}
+
+  /* ---------- network ---------- */
+  .network{padding:104px 56px;background:var(--cream);}
+  .network .head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:52px;}
+  .network h2{font-family:var(--serif);font-weight:400;font-size:56px;line-height:1;max-width:640px;}
+  .network .head p{font-size:17px;line-height:1.65;color:var(--muted);max-width:380px;}
+  .rows{border-top:1px solid var(--line2);}
+  .nrow{display:grid;grid-template-columns:80px 1fr 1fr;gap:32px;padding:28px 0;
+        border-bottom:1px solid var(--line2);align-items:baseline;}
+  .nrow .n{font-family:var(--serif);font-size:26px;color:var(--gold);}
+  .nrow .t{font-family:var(--serif);font-size:28px;}
+  .nrow .d{font-size:16px;color:var(--muted);}
+
+  /* ---------- portfolio ---------- */
+  .portfolio{padding:104px 56px;background:var(--deep);color:var(--cream);}
+  .portfolio .head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:40px;}
+  .portfolio .kicker{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--gold);margin-bottom:14px;}
+  .portfolio h2{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1;}
+  .portfolio .head a{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.1em;
+        color:var(--cream);border-bottom:1px solid var(--gold);padding-bottom:4px;white-space:nowrap;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:260px;gap:14px;}
+  .grid .cell{overflow:hidden;border-radius:3px;}
+  .grid .tall{grid-row:span 2;}
+
+  /* ---------- areas ---------- */
+  .areas{padding:96px 56px;background:var(--cream);display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
+  .areas .map{height:360px;border-radius:4px;overflow:hidden;box-shadow:0 20px 50px rgba(20,52,58,.16);background:var(--deep);}
+  .areas .map svg{display:block;width:100%;height:100%;}
+  .areas h2{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1.05;margin-bottom:18px;}
+  .areas p{font-size:17px;line-height:1.7;color:var(--muted);margin-bottom:24px;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chips span{border:1px solid #C9BFA6;color:var(--ink);font-size:14px;padding:8px 16px;border-radius:100px;}
+
+  /* ---------- cta / footer ---------- */
+  .cta{background:var(--ink);color:var(--cream);padding:100px 56px 40px;}
+  .cta .center{text-align:center;max-width:720px;margin:0 auto 64px;}
+  .cta .eyebrow{justify-content:center;}
+  .cta .kicker{color:var(--gold);letter-spacing:.24em;}
+  .cta h2{font-family:var(--serif);font-weight:400;font-size:68px;line-height:1.02;margin-bottom:22px;}
+  .cta .center p{font-size:18px;color:#D7E2E3;margin-bottom:34px;}
+  .buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{font-family:var(--display);font-weight:700;letter-spacing:.06em;font-size:15px;border-radius:2px;}
+  .btn.solid{background:var(--gold);color:var(--ink);padding:18px 34px;}
+  .btn.solid:hover{color:var(--ink);filter:brightness(1.05);}
+  .btn.ghost{border:1.5px solid rgba(244,240,230,.5);color:var(--cream);padding:16px 32px;}
+  .btn.ghost:hover{color:var(--cream);border-color:var(--gold);}
+  .footer{border-top:1px solid rgba(238,191,79,.25);padding-top:30px;display:flex;justify-content:space-between;
+        align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer .brand .mark{height:52px;}
+  .footer .brand .word{font-size:18px;}
+  .footer .tag{font-family:var(--serif);font-style:italic;font-size:16px;color:#B9CCCE;}
+  .footer .contact{font-size:14px;color:#9FB6B8;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1100px){
+    .headline h1{font-size:72px;}
+    .staging .inner{grid-template-columns:1fr;gap:40px;}
+    .areas{grid-template-columns:1fr;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:820px){
+    .topbar{padding:22px 24px;}
+    .nav{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--deep);flex-direction:column;
+          align-items:flex-start;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);
+          transition:transform .3s ease;z-index:20;font-size:18px;box-shadow:-20px 0 60px rgba(0,0,0,.4);}
+    .nav.open{transform:translateX(0);}
+    .nav .cta{font-size:14px;}
+    .navtoggle{display:block;}
+    body.menu-open .navtoggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    body.menu-open .navtoggle span:nth-child(2){opacity:0;}
+    body.menu-open .navtoggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .hero{height:600px;}
+    .headline{left:24px;right:24px;bottom:44px;}
+    .headline h1{font-size:52px;}
+    .vmeta{display:none;}
+    .marquee .track{font-size:24px;gap:28px;}
+    .statement{grid-template-columns:1fr;gap:20px;padding:72px 24px;}
+    .statement .lede{font-size:30px;}
+    .srow{grid-template-columns:1fr;}
+    .srow.reverse .copy{order:0;}
+    .srow.reverse .media{order:0;}
+    .srow .media{min-height:340px;}
+    .srow .copy{padding:56px 24px;}
+    .srow h3{font-size:32px;}
+    .staging{padding:72px 24px;}
+    .staging h2{font-size:40px;}
+    .ba{height:360px;}
+    .network{padding:72px 24px;}
+    .network .head{flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:32px;}
+    .network h2{font-size:40px;}
+    .nrow{grid-template-columns:44px 1fr;gap:10px 18px;}
+    .nrow .d{grid-column:2;}
+    .portfolio{padding:72px 24px;}
+    .portfolio .head{flex-direction:column;align-items:flex-start;}
+    .portfolio h2{font-size:40px;}
+    .grid{grid-auto-rows:200px;gap:10px;}
+    .areas{padding:64px 24px;gap:36px;}
+    .areas h2{font-size:36px;}
+    .cta{padding:72px 24px 32px;}
+    .cta h2{font-size:44px;}
+    .footer{flex-direction:column;align-items:flex-start;text-align:left;}
+  }
+  @media (max-width:520px){
+    .brand .mark{height:48px;}
+    .headline h1{font-size:40px;}
+    .grid{grid-template-columns:1fr;grid-auto-rows:220px;}
+    .grid .tall{grid-row:span 1;}
+    .stats{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="bg">
+      <div class="slot">
+        <img src="assets/hero.jpg" alt="A beautifully staged home" onerror="this.classList.add('missing')">
+        <div class="hint">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 16l-5-5L5 20"/></svg>
+          <span>Hero shot of a stunning staged home</span>
+        </div>
+      </div>
+    </div>
+    <div class="scrim"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Your Team home">
+        <img class="mark" src="assets/logo-mark.png" alt="" onerror="this.replaceWith(document.getElementById('logoFallback').content.cloneNode(true))">
+        <span class="word">YOUR TEAM</span>
+      </a>
+      <button class="navtoggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#staging">What is staging</a>
+        <a href="#work">Portfolio</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact" class="cta">CALL OR TEXT</a>
+      </nav>
+    </header>
+
+    <div class="vmeta">STAGING &nbsp;·&nbsp; CLEANING &nbsp;·&nbsp; JUNK REMOVAL</div>
+
+    <div class="headline">
+      <div class="eyebrow"><span class="rule"></span><span class="kicker">STAGE · STYLE · CLEAN · CLEAR OUT</span></div>
+      <h1>Homes that show<br>their best.</h1>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Staging</span><span class="star">✦</span>
+      <span>Styling</span><span class="star">✦</span>
+      <span>Cleaning</span><span class="star">✦</span>
+      <span>Junk Removal</span><span class="star">✦</span>
+      <span class="em">Your Team</span><span class="star">✦</span>
+      <span>Staging</span><span class="star">✦</span>
+      <span>Styling</span><span class="star">✦</span>
+      <span>Cleaning</span><span class="star">✦</span>
+      <span>Junk Removal</span><span class="star">✦</span>
+      <span class="em">Your Team</span><span class="star">✦</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <div class="statement">
+    <div class="label">THE APPROACH</div>
+    <div>
+      <p class="lede">Staged to sell, styled for a fresh look, deep-cleaned or cleared out — whatever your home needs, you've got a team on <em>your</em> side. That's the whole idea behind the name. We're <em>Your Team</em>, teaming up to make your dream home today.</p>
+      <p class="sub">Call for one service or the whole crew — it all works the same way. Not selling? We'll gladly consult on decorating or help make a home more presentable. And realtors: reach out anytime to partner with us on any service your listing needs.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services" id="services">
+    <div class="srow">
+      <div class="media">
+        <div class="slot">
+          <img loading="lazy" src="assets/service-staging.jpg" alt="Staged living room" onerror="this.classList.add('missing')">
+          <div class="hint"><span>Staged living room</span></div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="num">01</div>
+        <div class="cat">STAGING &amp; STYLING</div>
+        <h3>Show it at its best</h3>
+        <p>Selling, or simply ready for a change — we arrange furniture, light and styling so a home looks its most inviting. Staged listings command higher offers; a styled room is just lovely to live in. Want a lighter touch? Book a decorating consult on its own.</p>
+        <a href="#staging" class="txtlink">WHAT IS STAGING →</a>
+      </div>
+    </div>
+
+    <div class="srow reverse">
+      <div class="copy">
+        <div class="num">02</div>
+        <div class="cat">CLEANING</div>
+        <h3>A flawless finish</h3>
+        <p>Move-out, move-in, or simply a refresh. Deep, detailed cleaning that makes every surface shine — the kind of clean that reads as care in every photograph and showing.</p>
+        <a href="#contact" class="txtlink">BOOK A CLEAN →</a>
+      </div>
+      <div class="media">
+        <div class="slot">
+          <img loading="lazy" src="assets/service-cleaning.jpg" alt="Immaculate kitchen" onerror="this.classList.add('missing')">
+          <div class="hint"><span>Immaculate kitchen</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srow">
+      <div class="media">
+        <div class="slot">
+          <img loading="lazy" src="assets/service-junk.jpg" alt="Cleared, open space" onerror="this.classList.add('missing')">
+          <div class="hint"><span>Cleared, open space</span></div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="num">03</div>
+        <div class="cat">JUNK REMOVAL</div>
+        <h3>Clearing things out</h3>
+        <p>Clutter gone, hauled and handled, so a space can finally breathe. Often the fastest way to make a home feel larger, lighter and ready to show.</p>
+        <a href="#contact" class="txtlink">CLEAR IT OUT →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS STAGING -->
+  <div class="staging" id="staging">
+    <div class="inner">
+      <div>
+        <div class="eyebrow"><span class="rule"></span><span class="kicker">NEW TO THIS?</span></div>
+        <h2>So, what exactly<br>is staging?</h2>
+        <p>Staging is the craft of arranging a home so a buyer feels it before they own it. An empty or cluttered room is hard to imagine living in — a staged room sells the feeling. It's the difference between a house being <em>looked at</em> and a home being <em>wanted.</em></p>
+        <div class="stats">
+          <div><div class="big">Higher</div><div class="small">offers, often above asking</div></div>
+          <div><div class="big">Faster</div><div class="small">fewer days on market</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="ba" id="ba" tabindex="0" role="slider" aria-label="Before and after comparison — arrow keys move the divider"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="layer before">
+            <div class="slot">
+              <img loading="lazy" src="assets/ba-before-v2.jpeg" alt="Before — an empty room" onerror="this.classList.add('missing')">
+              <div class="hint"><span>Before — empty room</span></div>
+            </div>
+          </div>
+          <div class="layer after" id="baAfter">
+            <div class="slot">
+              <img loading="lazy" src="assets/ba-after-v2.jpeg" alt="After — the staged room" onerror="this.classList.add('missing')">
+              <div class="hint"><span>After — staged room</span></div>
+            </div>
+          </div>
+          <div class="tag before">BEFORE</div>
+          <div class="tag after">AFTER</div>
+          <div class="divider" id="baDivider"></div>
+          <div class="knob" id="baKnob">‹›</div>
+        </div>
+        <p class="ba-hint">CLICK OR DRAG ANYWHERE TO REVEAL THE TRANSFORMATION</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NETWORK -->
+  <div class="network">
+    <div class="head">
+      <h2>One name.<br>Every trade.</h2>
+      <p>Book any service on its own, or let us coordinate the whole network so you never chase five vendors. Realtors — reach out to partner with us on any service your listing needs.</p>
+    </div>
+    <div class="rows">
+      <div class="nrow"><span class="n">01</span><span class="t">Realtors</span><span class="d">Pricing and listing strategy to sell at the top of the market.</span></div>
+      <div class="nrow"><span class="n">02</span><span class="t">Stagers</span><span class="d">Furniture and styling that make buyers fall in love.</span></div>
+      <div class="nrow"><span class="n">03</span><span class="t">Cleaners</span><span class="d">Deep, detailed cleans that make every room read as cared-for.</span></div>
+      <div class="nrow"><span class="n">04</span><span class="t">Contractors</span><span class="d">Carpenters and craftspeople for the fixes that add real value.</span></div>
+      <div class="nrow"><span class="n">05</span><span class="t">Haulers</span><span class="d">Junk removal that clears a home and lets the space breathe.</span></div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="portfolio" id="work">
+    <div class="head">
+      <div>
+        <div class="kicker">SELECTED WORK</div>
+        <h2>The portfolio</h2>
+      </div>
+      <a href="#contact">YOURS COULD BE NEXT →</a>
+    </div>
+    <div class="grid">
+      <div class="cell tall"><div class="slot"><img loading="lazy" src="assets/work-1.jpg" alt="Feature project" onerror="this.classList.add('missing')"><div class="hint"><span>Feature project</span></div></div></div>
+      <div class="cell"><div class="slot"><img loading="lazy" src="assets/work-2.jpg" alt="Living room" onerror="this.classList.add('missing')"><div class="hint"><span>Living room</span></div></div></div>
+      <div class="cell"><div class="slot"><img loading="lazy" src="assets/work-3.jpg" alt="Kitchen" onerror="this.classList.add('missing')"><div class="hint"><span>Kitchen</span></div></div></div>
+      <div class="cell"><div class="slot"><img loading="lazy" src="assets/work-4.jpg" alt="Primary suite" onerror="this.classList.add('missing')"><div class="hint"><span>Primary suite</span></div></div></div>
+      <div class="cell tall"><div class="slot"><img loading="lazy" src="assets/work-5.jpg" alt="Feature project" onerror="this.classList.add('missing')"><div class="hint"><span>Feature project</span></div></div></div>
+      <div class="cell"><div class="slot"><img loading="lazy" src="assets/work-6.jpg" alt="Exterior" onerror="this.classList.add('missing')"><div class="hint"><span>Exterior</span></div></div></div>
+      <div class="cell"><div class="slot"><img loading="lazy" src="assets/work-7.jpg" alt="Dining" onerror="this.classList.add('missing')"><div class="hint"><span>Dining</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- AREAS -->
+  <div class="areas" id="areas">
+    <div class="map">
+      <svg viewBox="0 32 700 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Service-area map of the greater Washington, D.C. metro">
+        <defs>
+          <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#164039"/><stop offset="1" stop-color="#0C2622"/>
+          </linearGradient>
+          <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EEBF4F" stop-opacity="0.22"/><stop offset="1" stop-color="#1B8090" stop-opacity="0.18"/>
+          </linearGradient>
+        </defs>
+        <rect width="700" height="360" fill="url(#mapBg)"/>
+        <g stroke="#F4F0E6" stroke-opacity="0.05" stroke-width="1">
+          <line x1="0" y1="72" x2="700" y2="72"/><line x1="0" y1="144" x2="700" y2="144"/>
+          <line x1="0" y1="216" x2="700" y2="216"/><line x1="0" y1="288" x2="700" y2="288"/>
+          <line x1="140" y1="0" x2="140" y2="360"/><line x1="280" y1="0" x2="280" y2="360"/>
+          <line x1="420" y1="0" x2="420" y2="360"/><line x1="560" y1="0" x2="560" y2="360"/>
+        </g>
+        <path d="M 350,68 C 470,58 560,78 595,145 C 615,205 565,258 475,288 C 385,315 300,312 235,288 C 150,262 62,225 68,165 C 74,112 200,78 350,68 Z"
+              fill="url(#cover)" stroke="#EEBF4F" stroke-opacity="0.8" stroke-width="2" stroke-dasharray="7 6"/>
+        <path d="M 360,95 C 400,140 415,165 430,185 C 460,220 480,265 500,305" fill="none" stroke="#7FB4B8" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+        <text x="470" y="270" font-family="Archivo, sans-serif" font-size="11" font-style="italic" fill="#7FB4B8" fill-opacity="0.8" transform="rotate(60 470 270)">Potomac</text>
+        <text x="150" y="300" font-family="Archivo, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#F4F0E6" fill-opacity="0.32">VIRGINIA</text>
+        <text x="500" y="70" font-family="Archivo, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#F4F0E6" fill-opacity="0.32">MARYLAND</text>
+        <g font-family="Archivo, sans-serif">
+          <circle cx="100" cy="150" r="4" fill="#F4F0E6"/><text x="110" y="147" font-size="11.5" fill="#D7E2E3">Winchester</text>
+          <circle cx="350" cy="90" r="4" fill="#F4F0E6"/><text x="360" y="87" font-size="11.5" fill="#D7E2E3">Gaithersburg</text>
+          <circle cx="560" cy="98" r="4" fill="#F4F0E6"/><text x="524" y="120" font-size="11.5" fill="#D7E2E3">Elkridge</text>
+          <circle cx="390" cy="150" r="4" fill="#F4F0E6"/><text x="335" y="142" font-size="11.5" fill="#D7E2E3">Bethesda</text>
+          <circle cx="458" cy="145" r="4" fill="#F4F0E6"/><text x="470" y="142" font-size="11.5" fill="#D7E2E3">Silver Spring</text>
+          <circle cx="330" cy="192" r="4" fill="#F4F0E6"/><text x="232" y="196" font-size="11.5" fill="#D7E2E3">Fairfax · Tysons</text>
+          <circle cx="402" cy="207" r="4" fill="#F4F0E6"/><text x="412" y="211" font-size="11.5" fill="#D7E2E3">Arlington</text>
+          <circle cx="428" cy="238" r="4" fill="#F4F0E6"/><text x="438" y="242" font-size="11.5" fill="#D7E2E3">Alexandria</text>
+          <circle cx="270" cy="250" r="4" fill="#F4F0E6"/><text x="188" y="254" font-size="11.5" fill="#D7E2E3">Manassas</text>
+          <circle cx="372" cy="290" r="4" fill="#F4F0E6"/><text x="382" y="294" font-size="11.5" fill="#D7E2E3">Dumfries</text>
+          <g transform="translate(430 185)">
+            <circle r="12" fill="#EEBF4F" fill-opacity="0.25"/>
+            <path d="M0,-9 L2.4,-2.6 L9,-2.6 L3.7,1.4 L5.7,8 L0,4 L-5.7,8 L-3.7,1.4 L-9,-2.6 L-2.4,-2.6 Z" fill="#EEBF4F"/>
+          </g>
+          <text x="443" y="176" font-size="14" font-weight="800" letter-spacing="1" fill="#EEBF4F">WASHINGTON, D.C.</text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div class="label">WHERE WE WORK</div>
+      <h2>Serving the DMV</h2>
+      <p>We cover the greater Washington, D.C. metro — reaching west to Winchester, south to Manassas and Dumfries, and across the Maryland suburbs. Not sure you're in range? Call or text and we'll answer the same day.</p>
+      <div class="chips">
+        <span>Washington, D.C.</span><span>Northern Virginia</span><span>Maryland suburbs</span>
+        <span>West to Winchester</span><span>South to Manassas &amp; Dumfries</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA / FOOTER -->
+  <div class="cta" id="contact">
+    <div class="center">
+      <div class="eyebrow"><span class="rule"></span><span class="kicker">LET'S BEGIN</span><span class="rule"></span></div>
+      <h2>Ready when<br>you are.</h2>
+      <p>Tell us about your property. We'll take it from there.</p>
+      <div class="buttons">
+        <a href="tel:5550102400" class="btn solid">CALL (555) 010-2400</a>
+        <a href="sms:5550102400" class="btn ghost">TEXT US</a>
+      </div>
+    </div>
+    <div class="footer">
+      <a class="brand" href="#top" aria-label="Your Team home">
+        <img class="mark" src="assets/logo-mark.png" alt="" onerror="this.replaceWith(document.getElementById('logoFallback').content.cloneNode(true))">
+        <span class="word">YOUR TEAM</span>
+      </a>
+      <div class="tag">Teaming to make your dream home today</div>
+      <div class="contact">hello@yourteam.com · (555) 010-2400 · <a href="https://www.instagram.com/yourstagingteam" target="_blank" rel="noopener" style="color:#9FB6B8;border-bottom:1px solid rgba(238,191,79,.5);">@yourstagingteam</a></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- inline fallback mark shown if assets/logo-mark.png is not present -->
+<template id="logoFallback">
+  <svg class="mark" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" style="height:64px;width:auto;">
+    <rect width="64" height="64" rx="8" fill="#EEBF4F"/>
+    <text x="32" y="43" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="30" fill="#14343A">YT</text>
+  </svg>
+</template>
+
+<script>
+(function(){
+  // ----- mobile menu -----
+  var toggle = document.querySelector('.navtoggle');
+  var nav = document.getElementById('nav');
+  if (toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      document.body.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // ----- before / after slider -----
+  var ba = document.getElementById('ba');
+  var after = document.getElementById('baAfter');
+  var divider = document.getElementById('baDivider');
+  var knob = document.getElementById('baKnob');
+  if (ba && after){
+    var dragging = false;
+    var pos = 50;
+    function apply(p){
+      pos = Math.max(0, Math.min(100, p));
+      after.style.clipPath = 'inset(0 0 0 ' + pos + '%)';
+      divider.style.left = pos + '%';
+      knob.style.left = pos + '%';
+      ba.setAttribute('aria-valuenow', Math.round(pos));
+    }
+    function setPos(clientX){
+      var r = ba.getBoundingClientRect();
+      apply(((clientX - r.left) / r.width) * 100);
+    }
+    ba.addEventListener('keydown', function(e){
+      var step = e.shiftKey ? 10 : 3;
+      if (e.key === 'ArrowLeft')       { apply(pos - step); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { apply(pos + step); e.preventDefault(); }
+      else if (e.key === 'Home')       { apply(0);   e.preventDefault(); }
+      else if (e.key === 'End')        { apply(100); e.preventDefault(); }
+    });
+    ba.addEventListener('pointerdown', function(e){
+      e.preventDefault();
+      try { ba.setPointerCapture(e.pointerId); } catch(_){}
+      dragging = true;
+      setPos(e.clientX);
+    });
+    ba.addEventListener('pointermove', function(e){ if (dragging) setPos(e.clientX); });
+    ba.addEventListener('pointerup', function(e){
+      try { ba.releasePointerCapture(e.pointerId); } catch(_){}
+      dragging = false;
+    });
+    ba.addEventListener('pointercancel', function(){ dragging = false; });
+    // start at the midpoint
+    apply(50);
+  }
+})();
+</script>
+</body>
+</html>

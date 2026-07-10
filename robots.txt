@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# At launch: replace with the real domain and uncomment
+# Sitemap: https://REAL-DOMAIN.com/sitemap.xml
