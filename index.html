@@ -119,13 +119,10 @@
   /* ---------- marquee ---------- */
   .marquee{background:var(--ink);color:var(--cream);overflow:hidden;padding:20px 0;
         border-bottom:1px solid rgba(238,191,79,.35);}
-  .marquee .track{display:flex;align-items:center;gap:40px;font-family:var(--serif);font-size:30px;
-        white-space:nowrap;width:max-content;animation:scroll 26s linear infinite;}
-  .marquee .track span{padding-left:0;}
+  .marquee .track{display:flex;align-items:center;justify-content:center;gap:40px;
+        font-family:var(--serif);font-size:30px;white-space:nowrap;}
   .marquee .star{color:var(--gold);}
   .marquee .em{font-style:italic;color:var(--gold);}
-  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-  @media (prefers-reduced-motion:reduce){.marquee .track{animation:none;justify-content:center;width:100%;}}
 
   /* ---------- statement ---------- */
   .statement{padding:104px 56px;background:var(--cream);display:grid;grid-template-columns:220px 1fr;gap:48px;}
@@ -340,12 +337,7 @@
       <span>Styling</span><span class="star">✦</span>
       <span>Cleaning</span><span class="star">✦</span>
       <span>Junk Removal</span><span class="star">✦</span>
-      <span class="em">Your Team</span><span class="star">✦</span>
-      <span>Staging</span><span class="star">✦</span>
-      <span>Styling</span><span class="star">✦</span>
-      <span>Cleaning</span><span class="star">✦</span>
-      <span>Junk Removal</span><span class="star">✦</span>
-      <span class="em">Your Team</span><span class="star">✦</span>
+      <span class="em">Your Team</span>
     </div>
   </div>
 
