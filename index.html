@@ -166,8 +166,8 @@
         cursor:ew-resize;touch-action:none;box-shadow:0 24px 60px rgba(0,0,0,.35);}
   .ba .layer{position:absolute;inset:0;pointer-events:none;}
   .ba .layer .slot{background:linear-gradient(135deg,#1c4a45,#0E2B29);}
-  .ba .before{z-index:1;}                       /* empty room — base layer */
-  .ba .after{z-index:2;clip-path:inset(0 0 0 50%);}  /* staged — revealed on the right */
+  .ba .layer.before{z-index:1;}                       /* empty room — base layer */
+  .ba .layer.after{z-index:2;clip-path:inset(0 0 0 50%);}  /* staged — revealed on the right */
   .ba .tag{position:absolute;top:18px;font-family:var(--display);font-weight:700;font-size:11px;
         letter-spacing:.14em;padding:6px 12px;border-radius:2px;pointer-events:none;z-index:4;}
   .ba .tag.before{left:18px;background:rgba(14,43,41,.85);color:var(--cream);}
